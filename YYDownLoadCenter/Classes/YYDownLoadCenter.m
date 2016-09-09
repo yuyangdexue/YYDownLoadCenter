@@ -130,7 +130,7 @@ static  YYDownLoadCenter *_downloadManager;
 - (void)download:(NSString *)url  fileName:(NSString *)fileName progress:(void(^)(NSInteger receivedSize, NSInteger expectedSize, CGFloat progress))progressBlock state:(void(^)(DownloadState state))stateBlock
 {
     if (!url) return;
-    if ([self isCompletion:url]) {
+    if ([self isCompletion:fileName]) {
         stateBlock(DownloadStateCompleted);
         NSLog(@"----该资源已下载完成");
         return;
